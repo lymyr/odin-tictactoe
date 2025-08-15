@@ -1,0 +1,133 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+
+
+/* my css */
+
+:root {
+    font-family: "Sour Gummy", Arial, Helvetica, sans-serif;
+    --main-color: rgb(101, 80, 61);
+    --text-color: rgb(176, 142, 112);
+    background-color: rgb(244, 234, 225);
+}
+
+* {
+    font-family: "Sour Gummy";
+}
+header {
+    display: flex;
+    padding-block: 4px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    justify-content: center;
+    letter-spacing:1.5px; 
+}
+
+dialog {
+    margin:auto;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 4px rgb(201, 201, 201);
+    padding: 36px;
+}
+
+dialog form {
+    display:flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+dialog form > div {
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
+dialog input {
+    padding: 2px 6px;
+}
+
+dialog button {
+    border:none;
+    background-color: rgb(106, 191, 239);
+    color: white;
+    border-radius: 4px;
+    padding-block:4px;
+}
+dialog button:hover {
+    background-color: rgb(162, 211, 239);
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.board {
+    display:grid;
+    --box-size: clamp(80px, 15vw, 120px);
+    grid-template-columns: repeat(3, var(--box-size));
+    grid-template-rows: repeat(3, var(--box-size));
+    
+    width: fit-content;
+    margin: auto;
+}
+
+.board div {
+    border:1px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: 200;
+}
