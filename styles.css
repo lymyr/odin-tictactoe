@@ -191,6 +191,7 @@ div:has(.board) {
   justify-content: space-between;
   margin: auto;
   padding-block:12px;
+  height: 60px;
 }
 
 .scoreboard > * {
@@ -201,9 +202,14 @@ div:has(.board) {
   font-weight: 600;
   display: flex;
   gap:8px;
+  height:fit-content;
 }
 .scoreboard span {
   font-weight: 400;
+}
+
+.scoreboard:first-child > * {
+  align-self: flex-end;
 }
 
 .scoreboard:nth-child(3) {

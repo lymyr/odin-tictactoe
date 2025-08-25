@@ -138,7 +138,7 @@ function startGame(name1, name2) {
         score1.textContent = player1.getScore();
         score2.textContent = player2.getScore();
 
-        const winningScore = 6;
+        const winningScore = 3;
         if (player1.getScore() == winningScore || player2.getScore() == winningScore) {
             const p = document.createElement("p");
             p.textContent = (player1.getScore() == winningScore ? `${player1.name} won!` :  `${player2.name} won!`);
